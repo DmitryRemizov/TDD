@@ -29,7 +29,7 @@ public class PhoneBook {
     }
 
     public static Integer findByName(String name) {
-        return 0;
+        return phoneBook.get(name);
     }
 
 }
