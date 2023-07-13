@@ -35,4 +35,16 @@ class PhoneBookTest {
         Assertions.assertNotEquals(nonExpected, actual);
         Assertions.assertNotNull(actual);
     }
+    @Test
+    void findByName() {
+        int expected = 234567899;
+        int actual = PhoneBook.findByName("Влад");
+        int nonExpected = 234567891;
+
+        Assertions.assertEquals(expected, actual);
+        Assertions.assertNotEquals(nonExpected, actual);
+        Assertions.assertNotNull(actual);
+    }
+
+
 }
