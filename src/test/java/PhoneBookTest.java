@@ -46,5 +46,13 @@ class PhoneBookTest {
         Assertions.assertNotNull(actual);
     }
 
-
+    @Test
+    void printAllNames() {
+        Collection<String> actual = PhoneBook.printAllNames();
+        Collection<String> expected = new ArrayList<>();
+        expected.add("Александра");
+        expected.add("Влад");
+        Assertions.assertEquals(expected, actual);
+        Assertions.assertNotNull(actual);
+    }
 }

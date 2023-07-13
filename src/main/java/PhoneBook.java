@@ -17,7 +17,7 @@ public class PhoneBook {
         return phoneBook.size();
     }
 
-    static String findByNumber(int phoneNumber){
+    static String findByNumber(int phoneNumber) {
         Set<Map.Entry<String, Integer>> entrySet = phoneBook.entrySet();
         String name = null;
         for (Map.Entry<String, Integer> nameNumberPair : entrySet) {
@@ -32,4 +32,7 @@ public class PhoneBook {
         return phoneBook.get(name);
     }
 
+    static Collection<String> printAllNames() {
+        return null;
+    }
 }
