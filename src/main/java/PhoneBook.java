@@ -1,4 +1,3 @@
-import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -32,7 +31,15 @@ public class PhoneBook {
         return phoneBook.get(name);
     }
 
-    static Collection<String> printAllNames() {
-        return null;
+    public static String printAllNames() {
+        StringBuilder sb = new StringBuilder();
+        if (phoneBook.isEmpty()) {
+            return "No contacts";
+        }
+        for (Map.Entry<String, Integer> entry : phoneBook.entrySet()) {
+            sb.append(entry.getKey()).append(" ");
+        }
+        return sb.toString();
     }
 }
+

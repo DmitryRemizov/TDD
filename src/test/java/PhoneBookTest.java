@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
+import static org.junit.Assert.assertEquals;
+
 
 class PhoneBookTest {
 
@@ -31,10 +33,11 @@ class PhoneBookTest {
         String expected = "Александра";
         String actual = PhoneBook.findByNumber(234567891);
         String nonExpected = "Влад";
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
         Assertions.assertNotEquals(nonExpected, actual);
         Assertions.assertNotNull(actual);
     }
+
     @Test
     void findByName() {
         int expected = 234567899;
@@ -47,12 +50,9 @@ class PhoneBookTest {
     }
 
     @Test
-    void printAllNames() {
-        Collection<String> actual = PhoneBook.printAllNames();
-        Collection<String> expected = new ArrayList<>();
-        expected.add("Александра");
-        expected.add("Влад");
-        Assertions.assertEquals(expected, actual);
-        Assertions.assertNotNull(actual);
+    public void testPrintAllNames() {
+        PhoneBook.add("Александра", 234567891);
+        PhoneBook.add("Влад", 234567899);
+        assertEquals("Александра Влад ", PhoneBook.printAllNames());
     }
 }
